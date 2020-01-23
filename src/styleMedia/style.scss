@@ -1,0 +1,70 @@
+@media (orientation: portrait) {
+  body {
+    font-size: 17px;
+
+    background-color: #fff;
+    display: block;
+  }
+
+  input[type="text"], input[type="button"] {
+    font-size: inherit;
+  }
+
+  .widjet {
+    min-width: 0px;
+    border: none;
+    box-shadow: none;
+
+    padding: 10px;
+
+    .inputMenu {
+      border: none;
+      box-shadow: none;
+      font-size: 20px;
+
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      padding: 10px;
+      box-sizing: border-box;
+      height: 75px;
+
+      border-radius: 0;
+      background-color: #fff;
+
+      input[type="text"] {
+        width: 80%;
+        border-radius: 10px;
+      }
+
+      input[type="button"] {
+        width: 20%;
+      }
+    }
+
+    .tasks {
+      padding: 0 0 70px 0;
+
+      .task {
+        padding: 20px;
+        min-height: 55px;
+        box-sizing: border-box;
+        font-size: 20px;
+
+        background-color: #bdbdbd;
+        box-shadow: none;
+
+        input[type="text"] {
+          width: 100%;
+          min-height: 50px;
+          background-color: #fff;
+        }
+
+        input[type="button"] {
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
+  }
+}

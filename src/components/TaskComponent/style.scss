@@ -1,0 +1,64 @@
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 0 6px #000;
+  border-radius: 25px;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 60px;
+  padding: 10px;
+
+  margin-top: 10px;
+
+  transition: .5s all;
+
+  .task-childBlocksCenter {
+    display: flex;
+    align-items: center;
+  }
+
+  .task-content {
+    max-width: 220px;
+  }
+
+  .task-view {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .task-edit {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .task-label {
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+
+    input[type="checkbox"] {
+      position: fixed;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+}
+
+.task-ready {
+  background-color: #66bb6a !important;
+  transition: .5s all;
+}
+
+.task[disabled] {
+  pointer-events: none;
+  opacity: 0.7;
+}
