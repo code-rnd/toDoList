@@ -41,7 +41,7 @@ export default function TaskComponent(props) {
                             handleCheckedTask(e.currentTarget.checked);
                         }}/>
                         <div>
-                            {ready ? '🟢' : '⭕'}
+                            {ready ? '🔵' : '⭕'}
                         </div>
                     </label>
 

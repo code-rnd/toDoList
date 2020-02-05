@@ -15,6 +15,7 @@
     border: none;
     box-shadow: none;
 
+    margin: 0;
     padding: 10px;
 
     .inputMenu {
@@ -41,7 +42,8 @@
       }
 
       input[type="button"] {
-        width: 20%;
+        border-radius: 10px;
+        width: 15%;
       }
     }
 
