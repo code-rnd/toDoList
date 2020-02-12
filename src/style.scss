@@ -27,4 +27,9 @@ body {
   input[type="button"] {
     width: 30px;
   }
+
+  div[disabled] {
+    pointer-events: none;
+    opacity: 0.7;
+  }
 }

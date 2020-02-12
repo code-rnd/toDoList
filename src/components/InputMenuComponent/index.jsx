@@ -14,9 +14,14 @@ export default function InputMenuComponent(props) {
 
     const getButtonAddTask = () => {
         return (
-            <input type={'button'} value={`add`} onClick={() => {
+            <div className={'task-edit-exit'} onClick={() => {
                 handleAddTask()
-            }} disabled={!isContent}/>
+            }} disabled={!isContent}>
+                add
+            </div>
+            // <input type={'button'} value={`add`} onClick={() => {
+            //     handleAddTask()
+            // }} disabled={!isContent}/>
         )
     }
 

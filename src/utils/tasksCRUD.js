@@ -20,7 +20,7 @@ export const updateTaskUtil = (tasks, task) => {
     const idTask = task.id;
     let indexTask = null;
 
-    [...tasks].map((item, index) => {
+    [...tasks].forEach((item, index) => {
         if (item.id === idTask) {
             indexTask = index
         }
@@ -41,7 +41,7 @@ export const removeTaskUtil = (tasks, task) => {
     const idTask = task.id;
     let indexTask = null;
 
-    [...tasks].map((item, index) => {
+    [...tasks].forEach((item, index) => {
         if (item.id === idTask) {
             indexTask = index
         }

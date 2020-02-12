@@ -1,19 +1,25 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 
 import './style.scss';
+import IosSwitchComponent from "../IosSwitchComponent";
 
 export default function TaskComponent(props) {
 
     const {task} = props;
-    const {content, ready, id, isCurrentEdit} = task;
+    const {content, ready, id} = task;
 
     const {updateTask, removeTask} = props;
     const [isEdit, setEdit] = useState(false);
     const [isTaskContent, setTaskContent] = useState(content);
+    const [isReady, setIsReady] = useState(ready);
 
     useEffect(() => {
-        isCurrentEdit ? setEdit(true) : setEdit(false);
-    }, [isCurrentEdit])
+        setIsReady(ready);
+    }, [ready])
+
+    useEffect(() => {
+        setTaskContent(content);
+    }, [task])
 
     const handleSetEdit = (edit) => {
         setEdit(edit);
@@ -34,20 +40,11 @@ export default function TaskComponent(props) {
 
         return (
             <div className={'task-view'}>
-                <div className={"task-content"}>{content}</div>
+                <div className={"task-content"} onClick={() => {
+                    handleSetEdit(true);
+                }}>{content}</div>
                 <div className={'task-childBlocksCenter'}>
-                    <label className={'task-label'}>
-                        <input type={'checkbox'} checked={ready} onChange={(e) => {
-                            handleCheckedTask(e.currentTarget.checked);
-                        }}/>
-                        <div>
-                            {ready ? '🔵' : '⭕'}
-                        </div>
-                    </label>
-
-                    <input type={'button'} value={'⚙'} onClick={() => {
-                        handleSetEdit(true)
-                    }}/>
+                    <IosSwitchComponent ready={isReady} handleCheckedTask={handleCheckedTask}/>
                 </div>
             </div>
         )
@@ -68,29 +65,23 @@ export default function TaskComponent(props) {
                 id: id,
                 content: isTaskContent
             });
-            setTaskContent(isTaskContent);
         }
 
-        const handleCancelEditTask = () => {
-            handleSetEdit(false);
-            setTaskContent(content);
+        const handleOnBlur = () => {
+            !isTaskContent || isTaskContent === ' ' ?
+                handleRemoveTask() : handleUpdateTask()
         }
 
         return (
             <div className={'task-edit'}>
-                <input type={'text'} value={isTaskContent} onChange={(e) => {
-                    setTaskContent(e.currentTarget.value)
-                }}/>
-
-                <input type={'button'} value={'💾'} onClick={() => {
-                    handleUpdateTask()
-                }}/>
-                <input type={'button'} value={'🗑️'} onClick={() => {
-                    handleRemoveTask()
-                }}/>
-                <input type={'button'} value={'❌'} onClick={() => {
-                    handleCancelEditTask()
-                }}/>
+                <textarea value={isTaskContent}
+                          onChange={e => setTaskContent(e.currentTarget.value)}
+                          rows={3}
+                          className={'task-textarea'}
+                          autoFocus={true}
+                    onBlur={() => handleOnBlur()}
+                />
+                <div className={'task-edit-exit'}>save</div>
             </div>
         )
     }
