@@ -1,0 +1,36 @@
+.toggle {
+  display: block;
+  position: relative;
+  border-radius: 50px;
+  width: 40px;
+  height: 15px;
+  box-shadow: 0px 0px 4px #000;
+  background-color: #00000098;
+  cursor: pointer;
+  transition: all .5s;
+
+  span {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    border-radius: 100%;
+    background-color: #fff;
+    left: -4px;
+    top: -2px;
+    box-shadow: 0px 0px 4px #000;
+
+    transition: all .5s;
+  }
+}
+
+.toggle-active {
+  box-shadow: 0px 0px 4px #000;
+  transition: all .5s;
+
+  span {
+    left: 26px;
+    //background-color: #4caf50;
+    box-shadow: 0px 0px 4px #000;
+    transition: all .5s;
+  }
+}

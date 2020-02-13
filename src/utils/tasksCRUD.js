@@ -4,7 +4,13 @@ export const addTaskUtil = (tasks, task) => {
         return []
     }
 
-    const idGen = [...tasks][tasks.length - 1].id + 1;
+    let idGen = 0;
+    if (tasks.length === 0) {
+        idGen = 0;
+    } else {
+        idGen = [...tasks][tasks.length - 1].id + 1;
+    }
+
     const newTask = {...task, id: idGen, ready: false};
     const newTasks = [...tasks, newTask];
 

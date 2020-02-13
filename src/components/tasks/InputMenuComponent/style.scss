@@ -1,0 +1,15 @@
+.inputMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 95%;
+
+  box-shadow: 0 0 3px #000;
+
+  input[type='text'] {
+    width: 55%;
+    height: 100%;
+  }
+}

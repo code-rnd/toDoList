@@ -1,0 +1,62 @@
+.processSwitch {
+  .toggle {
+    display: block;
+    position: relative;
+    border-radius: 50px;
+    width: 40px;
+    height: 15px;
+    box-shadow: 0px 0px 25px #000;
+    background-color: #00000098;
+    cursor: pointer;
+    transition: all .5s;
+    opacity: 1 !important;
+
+    width: 250px;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    color: #fff;
+    padding-right: 0px;
+    padding-left: 50px;
+    box-sizing: border-box;
+
+    span {
+      position: absolute;
+      width: 19px;
+      height: 19px;
+      border-radius: 100%;
+      background-color: #fff;
+      left: -8px;
+      top: -10px;
+      box-shadow: 0px 0px 4px #000;
+
+      width: 100px;
+      height: 100px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: #0d3d62;
+
+      transition: all .5s;
+    }
+  }
+
+  .toggle-active {
+    padding-right: 70px;
+
+    box-shadow: 0px 0px 25px #000;
+    transition: all .5s;
+
+    span {
+      left: 180px;
+      box-shadow: 0px 0px 4px #000;
+      transform: rotate(360deg);
+      transition: all .5s;
+    }
+  }
+}

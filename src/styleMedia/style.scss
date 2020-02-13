@@ -2,8 +2,12 @@
   body {
     font-size: 17px;
 
-    background-color: #fff;
+    background-color: #212121;
     display: block;
+
+    .processSwitch {
+      background-color: #2196f3;
+    }
   }
 
   input[type="text"], input[type="button"] {
@@ -17,6 +21,15 @@
 
     margin: 0;
     padding: 10px;
+
+    .display {
+      position: fixed;
+      top: 0;
+      background-color: #212121;
+      color: #ffffff;
+      z-index: 9;
+      padding: 10px 10px 0 10px;
+    }
 
     .inputMenu {
       border: none;
@@ -32,13 +45,24 @@
       width: 100%;
 
       border-radius: 0;
-      background-color: #fff;
+      background-color: #212121;
+
+      transition: .5s all;
+
+      .task-edit-exit {
+        transition: .5s all;
+      }
 
       input[type="text"] {
         width: 80%;
         border-radius: 10px;
         box-shadow: none;
         border: 1px solid rgba(0, 0, 0, 0.54);
+        color: #fff;
+      }
+
+      ::placeholder {
+        color: #6d6d6d;
       }
 
       input[type="button"] {
@@ -48,7 +72,7 @@
     }
 
     .tasks {
-      padding: 0 0 70px 0;
+      padding: 40px 0 70px 0;
 
       .task {
         padding: 20px;
@@ -74,4 +98,5 @@
       }
     }
   }
+
 }
